@@ -1,7 +1,7 @@
-function add(a, b) {
+function addWithTS(a, b) {
     return a + b;
 }
 
-const result = add('2', '5');
+const result = addWithTS('2', 5);
 
 console.log(result);
