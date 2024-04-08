@@ -60,6 +60,60 @@ function insertAtBeginning<T>(array: T[], value: T) {
 const demoArray = [1, 2, 3];
 
 const updatedArray = insertAtBeginning(demoArray, -1);
-const stringArray = insertAtBeginning(['word', 'world'], 'well')
+const stringArray = insertAtBeginning(['word', 'world'], 'well');
 
+//Classes and Interfaces
+class Student {
+    // firstName: string;
+    // lastName: string;
+    // age: number;
+    // private courses: string[];
+
+    // constructor(first: string, last: string, age: number, courses: string[]) {
+    //     this.firstName = first;
+    //     this.lastName = last;
+    //     this.age = age;
+    //     this.courses = courses;
+    // }
+
+    constructor(public firstName: string, public lastName: string, public age: number, private courses: string[]) {}
+
+    enrol(courseName: string) {
+        this.courses.push(courseName);
+    }
+
+    listCourses() {
+        return this.courses.slice();
+    }
+}
+
+const student = new Student('Neri', 'Dain', 33, ['Angular']);
+student.enrol('TS');
+student.listCourses();
+
+
+interface Human {
+    firsName: string;
+    age: number;
+
+    greet: () => void;
+}
+
+let neri: Human;
+neri = {
+    firsName: 'Neri',
+    age: 33,
+    greet() {
+        console.log('Hey');
+    },
+}
+
+class Instructor implements Human {
+    firsName: string;
+    age: number;
+    greet() {
+        console.log('Hey!');
+    };
+  
+}
 
